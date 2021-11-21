@@ -2,22 +2,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { FC } from 'react';
 import { AppProps } from 'next/app';
-import Box from '@mui/material/Box';
+import '../styles/globals.css';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        alignContent:'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Component {...pageProps} />
-    </Box>
-  );
+  return <Component {...pageProps} />;
 };
 
 export default MyApp;

@@ -4,33 +4,30 @@ import Box from '@mui/material/Box';
 import LogIn from '@src/Components/LogIn';
 import SignUp from '@src/Components/SignUp';
 import { Button } from '@mui/material';
+import Image from 'next/image';
+import commonWords from 'strings/index';
+import useStyles from '@src/Components/Accoont';
 
 const Account = () => {
   const [open, setOpen] = useState(false);
+  const classes = useStyles();
 
   const handleClick = () => {
     setOpen((prev) => !prev);
   };
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '400px',
-        border: '1px solid blue',
-        borderRadius: '10px',
-        padding: '20px',
-      }}
-    >
-      <img src="./public/Acoount-Logo.png" />
+    <Box className={classes.form}>
+      <Image src="/Account-Logo.png" alt="Login-logo" width="150px" height="150px" />
 
       {open ? <SignUp /> : <LogIn />}
 
-      <Button fullWidth type="button" variant="outlined" onClick={handleClick}>
-        {open ? 'Log In' : 'Sign Up'}
-      </Button>
+      <Box className={classes.formtext}>
+        {open ? [commonWords.i_have_account] : [commonWords.dont_have_any_account]}
+        <Button type="button" variant="text" onClick={handleClick}>
+          {open ? [commonWords.logIn] : [commonWords.signUp]}
+        </Button>
+      </Box>
     </Box>
   );
 };
