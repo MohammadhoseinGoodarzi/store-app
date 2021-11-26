@@ -8,6 +8,21 @@ import Image from 'next/image';
 import commonWords from 'strings/index';
 import useStyles from '@src/Components/Accoont';
 
+
+/**
+ * Account page : users Login or Register to theire account
+ *
+ *
+ * @example
+ *
+ * <Link href="/Account">Log In</Link>
+ *
+ * @see {@link https://nextjs.org/docs/api-reference/next/image} Next JS Image API
+ * @see {@link https://mui.com/components/box/} Material UI Box Component
+ * @see {@link https://mui.com/api/button/} Material UI Button API
+ * @see {@link https://mui.com/styles/basics/} Material UI basics Styles
+ */
+
 const Account = () => {
   const [open, setOpen] = useState(false);
   const classes = useStyles();
