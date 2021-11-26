@@ -24,7 +24,7 @@ const Account = () => {
 
       <Box className={classes.formtext}>
         {open ? [commonWords.i_have_account] : [commonWords.dont_have_any_account]}
-        <Button type="button" variant="text" onClick={handleClick}>
+        <Button type="button" className={classes.swichButton} variant="text" onClick={handleClick}>
           {open ? [commonWords.logIn] : [commonWords.signUp]}
         </Button>
       </Box>

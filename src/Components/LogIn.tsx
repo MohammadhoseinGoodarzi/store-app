@@ -8,6 +8,29 @@ import { Button } from '@mui/material';
 import commonWords from 'strings/index';
 import useStyles from '@src/Components/Accoont';
 
+/**
+ * A login form that get username and password (data) from user and return that data in cnsole log.
+ *
+ * @param {string} username its a name that user choose it for him/her self to use it in website
+ * @param {string} password it is our user password to login in his/her account
+ *
+ * @example
+ * const data = [
+ *      { user:  username: 'Mohammad', password: '12345678' },
+ *      { user:  username: 'emili77', password: 'abcdefgh' }
+ * ];
+ * const formSubmitHandler: SubmitHandler<IFormInputs> = (data: IFormInputs) => {
+ *    console.log(data);
+ * };
+ *
+ * <LogIn />
+ *
+ * @see {@link https://react-hook-form.com/api/usecontroller/controller/} React Hook Form Controller API
+ * @see {@link https://mui.com/api/text-field/} Material UI Textfield API
+ * @see {@link https://mui.com/components/box/} Material UI Box Component
+ * @see {@link https://mui.com/api/button/} Material UI Button API
+ */
+
 interface IFormInputs {
   username: string;
   password: string;
@@ -43,6 +66,7 @@ const LogIn = () => {
           render={({ field }) => (
             <TextField
               {...field}
+              className={classes.root}
               label={commonWords.username}
               variant="outlined"
               fullWidth
@@ -61,6 +85,7 @@ const LogIn = () => {
             <TextField
               {...field}
               type="password"
+              className={classes.root}
               label={commonWords.password}
               variant="outlined"
               fullWidth
@@ -70,13 +95,7 @@ const LogIn = () => {
           )}
         />
 
-        <Button
-          fullWidth
-          className={classes.gradiabtbg}
-          sx={{ marginBottom: '10px', marginTop: '10px', zIndex: '2' }}
-          type="submit"
-          variant="contained"
-        >
+        <Button className={classes.button} fullWidth  type="submit" variant="contained">
           {commonWords.logIn}
         </Button>
       </form>

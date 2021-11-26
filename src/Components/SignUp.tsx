@@ -8,6 +8,31 @@ import { Button } from '@mui/material';
 import commonWords from 'strings/index';
 import useStyles from '@src/Components/Accoont';
 
+/**
+ * A Signup(register) form that get username , password , confirm password and email (data) from user and return that data in cnsole log.
+ *
+ * @param {string} username its a name that user choose it for him/her self to use it in website
+ * @param {string} password it is our user password to login in his/her account
+ * @param {string} repassword it is the exact same as password, that user fill it to confirm his/her password
+ * @param {string} email it is our user email for register
+ *
+ * @example
+ * const data = [
+ *      { user:  username: 'Mohammad', password: '12345678', repassword: '12345678', email: 'mohammad@gmail.com' },
+ *      { user:  username: 'emili77', password: 'abcdefgh', repassword: 'abcdefgh', email: 'emili@email.com' }
+ * ];
+ * const formSubmitHandler: SubmitHandler<IFormInputs> = (data: IFormInputs) => {
+ *    console.log(data);
+ * };
+ *
+ * <SignUp />
+ *
+ * @see {@link https://react-hook-form.com/api/usecontroller/controller/} React Hook Form Controller API
+ * @see {@link https://mui.com/api/text-field/} Material UI Textfield API
+ * @see {@link https://mui.com/components/box/} Material UI Box Component
+ * @see {@link https://mui.com/api/button/} Material UI Button API
+ */
+
 interface IFormInputs {
   username: string;
   password: string;
@@ -53,6 +78,7 @@ const SignUp = () => {
             <TextField
               {...field}
               label={commonWords.username}
+              className={classes.root}
               variant="outlined"
               fullWidth
               error={!!errors.username}
@@ -71,6 +97,7 @@ const SignUp = () => {
               {...field}
               type="password"
               label={commonWords.password}
+              className={classes.root}
               variant="outlined"
               fullWidth
               error={!!errors.password}
@@ -89,6 +116,7 @@ const SignUp = () => {
               {...field}
               type="password"
               label={commonWords.confirmPassword}
+              className={classes.root}
               variant="outlined"
               fullWidth
               error={!!errors.repassword}
@@ -107,6 +135,7 @@ const SignUp = () => {
               {...field}
               type="email"
               label={commonWords.email}
+              className={classes.root}
               variant="outlined"
               fullWidth
               error={!!errors.email}
@@ -114,13 +143,7 @@ const SignUp = () => {
             />
           )}
         />
-        <Button
-          fullWidth
-          className={classes.gradiabtbg}
-          sx={{ marginBottom: '10px', marginTop: '10px', zIndex: '2' }}
-          type="submit"
-          variant="contained"
-        >
+        <Button fullWidth className={classes.button} type="submit" variant="contained">
           {commonWords.signUp}
         </Button>
       </form>

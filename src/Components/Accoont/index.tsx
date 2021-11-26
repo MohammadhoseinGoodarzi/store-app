@@ -12,8 +12,12 @@ const useStyles = makeStyles({
     backgroundColor: '#fff',
     zIndex: '1',
   },
-  gradiabtbg: {
+  button: {
     background: 'linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 36%, rgba(0,212,255,1) 100%);',
+    borderRadius: '30px !important',
+    margin: '10px 0 !important',
+    zIndex: '2',
+    fontFamily:'vazir !important',
   },
   formtext: {
     color: '#000000',
@@ -36,6 +40,28 @@ const useStyles = makeStyles({
     margin: '10px',
     padding: '10px',
   },
+  swichButton:{
+    fontFamily:'vazir !important',
+  },
+  root:{
+    '& .MuiFormLabel-root':{
+      fontFamily:'vazir'
+    },
+    '& .MuiInputLabel-formControl':{
+      top:'0',
+      right:'0 !important',
+      left:'auto',
+    },
+    '& .MuiInputLabel-outlined':{
+      transform:'translate(-14px,20px) scale(1)'
+    },
+    '& .MuiInputLabel-outlined.MuiInputLabel-shrink':{
+      transform:'translate(0,-8px) scale(0.75)'
+    },
+    '& .PrivateNotchedOutline-legendLabelled-3':{
+      textAlign:'right'
+    }
+  }
 });
 
 export default useStyles;
